@@ -1,9 +1,11 @@
 import Cursor from "./components/Cursor"
+import Drawer from "./components/Drawer"
 
 export default function App() {
   return (
     <>
-      <h1>Hello Wolrd!</h1>
+      <Drawer />
+      <div className="ml-12">Hello Wolrd!</div>
       <Cursor />
     </>
   )

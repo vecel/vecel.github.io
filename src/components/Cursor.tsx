@@ -38,8 +38,10 @@ export default function Cursor() {
         }
     }, [])
 
-    return <div 
-        className="fixed size-[20px] border-2 border-solid border-black rounded-full pointer-events-none z-100" 
-        style={{left: position.x - 10, top: position.y - 10}} 
-    />
+    return (
+        <div 
+            className="fixed size-5 border-2 border-solid border-black rounded-full pointer-events-none z-100" 
+            style={{ left: position.x - 10, top: position.y - 10 }} 
+        />
+    )
 }
