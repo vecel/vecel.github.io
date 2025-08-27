@@ -7,11 +7,6 @@ export default function Cursor() {
         y: 0
     })
 
-    const positionStyle = {
-        top: position.y,
-        left: position.x,
-    }
-
     const handleMouseMove = (e: MouseEvent) => {
         setPosition({
             x: e.clientX,
@@ -21,13 +16,17 @@ export default function Cursor() {
 
     const handleMouseOut = (e: MouseEvent) => {
         setPosition({
-            x: cutToRange(e.clientX, window.innerWidth),
-            y: cutToRange(e.clientY, window.innerHeight)
+            x: cutToWindowWidth(e.clientX),
+            y: cutToWindowHeight(e.clientY)
         })
     }
 
-    const cutToRange = (value: number, bound: number) => {
-        return Math.max(Math.min(value, bound), 0)
+    const cutToWindowWidth = (value: number) => {
+        return Math.max(Math.min(value, window.innerWidth), 0)
+    }
+
+    const cutToWindowHeight = (value: number) => {
+        return Math.max(Math.min(value, window.innerHeight), 0)
     }
 
     useEffect(() => {
@@ -39,5 +38,8 @@ export default function Cursor() {
         }
     }, [])
 
-    return <div className="cursor" style={positionStyle} />
+    return <div 
+        className="fixed size-[20px] border-2 border-solid border-black rounded-full pointer-events-none z-100" 
+        style={{left: position.x - 10, top: position.y - 10}} 
+    />
 }
