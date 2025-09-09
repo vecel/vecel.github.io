@@ -9,7 +9,7 @@ export default function Drawer() {
     // }
 
     return (
-        <nav className="absolute h-dvh bg-surface-container text-secondary shadow-(--nav-shadow)">
+        <nav className="fixed h-full bg-surface-container text-secondary shadow-(--nav-shadow) z-10">
             <ul className="mt-2">
                 <NavItem name="Home" icon={Home} active={true} />
                 <NavItem name="Projects" icon={Apps} active={false} />
