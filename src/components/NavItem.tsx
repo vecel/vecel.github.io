@@ -13,7 +13,8 @@ export default function NavItem({ name, link, icon: IconComponent, active }: Nav
     const linkTo = "#" + link
 
     return (
-        <a href={linkTo} className="flex flex-col items-center p-2 m-2 text-sm rounded-2xl hover:bg-primary-container hover:text-on-primary cursor-pointer">
+        <a href={linkTo} className="flex flex-col items-center mt-2 mb-2 pt-2 pb-2 text-sm rounded-2xl cursor-pointer">
+            {/* { active ? <div className="w-2 bg-primary"></div> : null } */}
             <IconComponent />
             {name}
         </a>

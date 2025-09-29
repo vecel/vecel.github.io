@@ -10,7 +10,7 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 h-full w-32 flex justify-center bg-surface text-primary z-10">
-            <ul className="mt-36">
+            <ul className="mt-36 w-full">
                 <NavItem link="home" name="Home" icon={Home} active={true} />
                 <NavItem link="projects" name="Projects" icon={Apps} active={false} />
                 <NavItem link="tech-stack" name="Tech" icon={Home} active={false} />
