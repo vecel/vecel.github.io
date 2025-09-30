@@ -1,8 +1,11 @@
 import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
 
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6"
+import { FaGitAlt, FaGithub, FaJava, FaLinkedinIn, FaPython, FaReact } from "react-icons/fa6"
+import { SiCss3, SiHtml5, SiJavascript, SiR, SiSpring, SiTailwindcss } from "react-icons/si"
 import SocialItem from "./components/SocialItem"
+import Section from "./components/Section"
+import TechItem from "./components/TechItem"
 
 export default function App() {
   return (
@@ -14,20 +17,27 @@ export default function App() {
           <h1 className="text-5xl text-white">Mateusz Karandys</h1>
           <h2 className="text-on-surface-variant text-xl">I'm a software developer</h2>
           <p className="mt-4 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <ul className="text-primary">
-            <li>&gt; About</li>
-            <li>&gt; Experience</li>
-            <li>&gt; Contact</li>
-          </ul>
+          <div className="w-64 h-16">button</div>
         </section>
 
-        <section className="w-3/5 mt-12">
-          <h2 className="text-xl text-primary font-mono">About</h2>
-        </section>
+        <Section id="about" title="About">
 
-        <section className="w-3/5 mt-12">
-          <h2 className="text-xl text-primary font-mono after:inline-block after:h-[1px] after:w-full after:bg-on-surface-variant">Technologies</h2>
-        </section>
+        </Section>
+
+        <Section id="technologies" title="Technologies">
+          <div className="flex justify-around flex-wrap text-primary font-mono">
+            <TechItem title="Java" icon={FaJava} />
+            <TechItem title="Spring" icon={SiSpring} />
+            <TechItem title="Html" icon={SiHtml5} />
+            <TechItem title="Css" icon={SiCss3} />
+            <TechItem title="Javascript" icon={SiJavascript} />
+            <TechItem title="React" icon={FaReact} />
+            <TechItem title="Tailwind" icon={SiTailwindcss} />
+            <TechItem title="Python" icon={FaPython} />
+            <TechItem title="R" icon={SiR} />
+            <TechItem title="Git" icon={FaGitAlt} />
+          </div>
+        </Section>
 
       </main>
       <aside className="fixed top-0 right-0 h-full w-32 flex flex-col items-center bg-surface text-primary">
