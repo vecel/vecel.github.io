@@ -1,12 +1,10 @@
 interface SeparatorProps {
-    height?: number
+    className?: string
 }
 
-export default function Separator({ height = 24 }: SeparatorProps) {
-
-    const h = "h-" + height
+export default function Separator({ className = "h-24" }: SeparatorProps) {
 
     return (
-        <div className={h} />
+        <div className={className} />
     )
 }

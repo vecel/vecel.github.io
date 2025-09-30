@@ -3,8 +3,11 @@
 @theme {
   --color-primary: #0bd91f;
   --color-secondary: #17870b;
+  --color-secondary-container: #052b0b;
   --color-surface: #131417;
-  --color-on-surface: #ffffff;
+  --color-on-surface: #bbbbbb;
+  --color-on-surface-light: #ffffff;
+  --color-on-surface-dark: #888888;
   --color-on-surface-variant: #555555;
 }
 
