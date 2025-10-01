@@ -7,7 +7,6 @@ import SocialItem from "./components/SocialItem"
 import Section from "./components/Section"
 import TechItem from "./components/TechItem"
 import Separator from "./components/Separator"
-import TechTag from "./components/TechTag"
 import ExperienceCard from "./components/ExperienceCard"
 
 export default function App() {
@@ -57,7 +56,32 @@ export default function App() {
           </div>
         </Section>
         <Separator />
+        <Section id="projects" title="Projects">
 
+        </Section>
+        <Separator />
+        <Section id="contact" title="Contact">
+          <Separator className="h-8" />
+          <div className="flex h-100 font-mono text-sm">
+            <p className="flex-2">
+              Send me a message using the form below.
+              <br />
+              <br />
+              Or write directly at: 
+              <br /> 
+              <span className="text-primary">mateusz.karandys@gmail.com</span>
+            </p>
+            <div className="w-4 h-full" />
+            <form className="flex flex-col items-stretch flex-4 text-sm">
+              {/* <label htmlFor="email">Email:</label> */}
+              <input id="email" type="email" placeholder="Email..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
+              <input type="text" placeholder="Subject..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
+              <textarea placeholder="Content..." required className="flex-1 mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
+              <input type="submit" value="Send" className="p-2 pl-6 pr-6 self-center border bg-secondary-container text-primary cursor-pointer focus:shadow-[4px_4px] focus:shadow-secondary" />
+            </form>
+          </div>
+        </Section>
+        <Separator />
       </main>
       <aside className="fixed top-0 right-0 h-full w-32 flex flex-col items-center bg-surface text-primary">
         <div className="mt-auto flex flex-col text-3xl">
