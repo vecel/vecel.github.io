@@ -15,17 +15,17 @@ export default function ExperienceCard({ title, description, years, achievements
     let counter = 1
     
     return (
-        <div className="w-4/5 h-90 flex border font-mono shadow-[4px_4px] shadow-secondary">
+        <div className="w-4/5 h-90 flex border shadow-[4px_4px] shadow-secondary">
             <div className="relative flex-4">
               <h3 className="pl-6 mt-3 mb-3 text-xl text-on-surface-light">
                 { title }
               </h3>
               <div className="w-32 h-0.5 bg-primary rounded-r-xs" />
-              <p className="p-2 text-sm text-on-surface-variant">
+              <p className="p-2 text-sm text-on-surface-dark">
                 { description }
               </p>
               <div className="absolute bottom-0 left-0 w-full flex">
-                <div className="p-3 pl-5 pr-5 bg-on-surface text-2xl text-on-surface-variant">
+                <div className="p-3 pl-5 pr-5 bg-on-surface text-2xl text-surface">
                     { years }
                 </div>
                 <div className="pr-6 ml-auto flex items-center text-sm font-extralight text-on-surface-dark">
