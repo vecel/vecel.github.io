@@ -1,19 +1,46 @@
-import Home from "@mui/icons-material/Home";
-import Apps from "@mui/icons-material/Apps";
 import NavItem from "./NavItem";
+import { useEffect, useState } from "react";
+
+type TopDistance = {
+    id: string,
+    top: number
+}
 
 export default function Navbar() {
 
-    // const handleItemSelect = (name: string) => {
-    //     setIsExpanded(false)
-    // }
+    const [sections, setSections] = useState<string[]>([])
+    const [active, setActive] = useState("")
+    
+    useEffect(() => {
+        const nodes = Array.from(document.querySelectorAll("section"))
+        const ids = nodes.map(node => node.id)
+        setSections(ids)
+
+        const handleScroll = () => {
+            const current = nodes.map(node => {
+                return {
+                    id: node.id,
+                    top: node.getBoundingClientRect().top
+                }
+            }).reduce((acc: TopDistance, cur: TopDistance) => {
+                if (acc.top < 0) return cur
+                return cur.top < acc.top ? cur : acc
+            }).id
+            setActive(current)
+        }
+
+        window.addEventListener("scroll", handleScroll, { passive: true })
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
 
     return (
-        <nav className="fixed top-0 left-0 h-full w-32 flex justify-center bg-surface text-primary z-10">
-            <ul className="mt-36 w-full">
-                <NavItem link="home" name="Home" icon={Home} active={true} />
-                <NavItem link="projects" name="Projects" icon={Apps} active={false} />
-                <NavItem link="tech-stack" name="Tech" icon={Home} active={false} />
+        <nav className="fixed top-0 left-0 h-full w-32 flex justify-center bg-surface text-on-surface-dark z-10">
+            <ul className="flex flex-col mt-36 w-full">
+                { sections.map(id =>
+                    <NavItem key={id} id={id} name={id[0].toUpperCase() + id.slice(1) } active={active == id} />
+                )}
             </ul>
         </nav>
     )

@@ -1,22 +1,21 @@
-import type { ComponentType } from "react"
-import type { SvgIconProps } from "@mui/material/SvgIcon"
-
 interface NavItemProps {
     name: string,
-    link: string,
-    icon: ComponentType<SvgIconProps>,
+    id: string,
     active: boolean,
 }
 
-export default function NavItem({ name, link, icon: IconComponent, active }: NavItemProps) {
+export default function NavItem({ name, id, active }: NavItemProps) {
     
-    const linkTo = "#" + link
+    const handleAnchorScroll = (e: React.MouseEvent) => {
+        e.preventDefault()
+        const section = document.getElementById(id)
+        section?.scrollIntoView()
+    }
 
     return (
-        <a href={linkTo} className="flex flex-col items-center mt-2 mb-2 pt-2 pb-2 text-sm rounded-2xl cursor-pointer">
-            {/* { active ? <div className="w-2 bg-primary"></div> : null } */}
-            <IconComponent />
-            {name}
+        <a onClick={handleAnchorScroll} className={`flex items-center mb-1 text-sm cursor-pointer ${active ? "text-primary font-bold" : "hover:text-on-surface"}`}>
+            { active && <div className="inline-block w-3 h-1 bg-primary rounded-r-2xl"/>}
+            <span className="ml-8">{ name }</span>
         </a>
     )
 }

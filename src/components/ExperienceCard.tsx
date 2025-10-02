@@ -5,9 +5,9 @@ interface ExperienceCardProps {
     title: string,
     description: string,
     years: string,
-    achievements: Array<string>,
+    achievements: string[],
     company: string,
-    technologies: Array<string>
+    technologies: string[]
 }
 
 export default function ExperienceCard({ title, description, years, achievements, company, technologies }: ExperienceCardProps) {

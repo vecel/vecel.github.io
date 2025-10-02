@@ -8,15 +8,16 @@ import Section from "./components/Section"
 import TechItem from "./components/TechItem"
 import Separator from "./components/Separator"
 import ExperienceCard from "./components/ExperienceCard"
-import TechTag from "./components/TechTag"
 import ProjectCard from "./components/ProjectCard"
 
 export default function App() {
+
   return (
     <>
       <Navbar />
       <main className="ml-32 mr-32 min-h-dvh flex flex-col items-center bg-surface text-on-surface font-mono">
-        <section className="w-3/5 mt-24">
+        <Separator className="h-24" />
+        <section id="welcome" className="w-3/5 scroll-mt-24">
           <h3 className="text-primary text-sm">Hello, my name is</h3>
           <h1 className="text-5xl text-on-surface-light">Mateusz Karandys</h1>
           <h2 className="text-on-surface-variant text-xl">I'm a software developer.</h2>
@@ -86,7 +87,7 @@ export default function App() {
               <input id="email" type="email" placeholder="Email..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
               <input type="text" placeholder="Subject..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
               <textarea placeholder="Content..." required className="flex-1 mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
-              <input type="submit" value="Send" className="p-2 pl-6 pr-6 self-center border bg-secondary-container text-primary cursor-pointer focus:shadow-[4px_4px] focus:shadow-secondary" />
+              <input type="submit" value="Send" className="p-2 pl-6 pr-6 self-center border bg-secondary-container text-primary cursor-pointer hover:shadow-[4px_4px] hover:shadow-secondary focus:shadow-[4px_4px] focus:shadow-secondary" />
             </form>
           </div>
         </Section>
@@ -99,6 +100,9 @@ export default function App() {
         </div>
         <div className="w-0.5 h-60 bg-primary"></div>
       </aside>
+      <footer className="ml-32 mr-32 h-32 bg-surface">
+        
+      </footer>
       <Cursor />
     </>
   )

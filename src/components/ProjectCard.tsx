@@ -5,7 +5,7 @@ interface ProjectCardProps {
     time: string,
     link: string,
     description: string,
-    tags: Array<string>
+    tags: string[]
 }
 
 export default function ProjectCard({ title, time, link, description, tags }: ProjectCardProps) {
