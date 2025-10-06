@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 type TopDistance = {
     id: string,
-    top: number
+    dist: number
 }
 
 export default function Navbar() {
@@ -15,19 +15,18 @@ export default function Navbar() {
         const nodes = Array.from(document.querySelectorAll("section"))
         const ids = nodes.map(node => node.id)
         setSections(ids)
-        if (active == "") setActive(ids[0])
+        if (active === "") setActive(ids[0])
 
         const handleScroll = () => {
             const current = nodes.map(node => {
                 return {
                     id: node.id,
-                    top: node.getBoundingClientRect().top
+                    dist: node.getBoundingClientRect().top
                 }
             }).reduce((acc: TopDistance, cur: TopDistance) => {
-                if (acc.top < 0) return cur
-                return cur.top < acc.top ? cur : acc
-            }).id
-            setActive(current)
+                return Math.abs(acc.dist) < Math.abs(cur.dist) ? acc : cur
+            })
+            setActive(current.id)
         }
 
         window.addEventListener("scroll", handleScroll, { passive: true })
