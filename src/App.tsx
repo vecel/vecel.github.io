@@ -2,7 +2,7 @@ import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
 
 import { FaGitAlt, FaGithub, FaJava, FaLinkedinIn, FaPython, FaReact } from "react-icons/fa6"
-import { SiCplusplus, SiCss3, SiHibernate, SiHtml5, SiJavascript, SiR, SiSpring, SiTailwindcss } from "react-icons/si"
+import { SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiR, SiSpring, SiTailwindcss } from "react-icons/si"
 import SocialItem from "./components/SocialItem"
 import Section from "./components/Section"
 import TechItem from "./components/TechItem"
