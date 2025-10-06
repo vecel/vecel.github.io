@@ -23,13 +23,24 @@ export default function App() {
           <h1 className="text-5xl text-on-surface-light">Mateusz Karandys</h1>
           <h2 className="text-on-surface-variant text-xl">I'm a software developer.</h2>
           <Separator className="h-4" />
-          <p className="text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p className="text-sm text-justify">
+            Welcome to my personal site. Here you will find some information about me that I find important. I put here my work experience and projects I've created. If you find it interesting let me know. Feel free to contact me at:
+            <span className="text-primary"> mateusz.karandys@gmail.com</span>
+          </p>
           <Separator className="h-4" />
           <div className="p-3 pl-6 pr-6 w-fit border border-secondary rounded-xl text-primary  cursor-pointer">Let's start</div>
         </section>
         <Separator />
         <Section id="about" title="About Me">
-
+          <p className="text-justify">
+            I'm a human (Captcha passed) with ironic and sarcastic sense of humour. I also like nerdy jokes. When something interests me I try to dig into it. I like hiking in the mountains, doing crosswords, coding, watching TV game show "Va Banque". My favourite stand-uper is Boras. Currently I'm learing two new languages: German and Flutter. When it comes to programming I cannot sleep until my project has nice structure (joking, I sleep well). I have some sense of art when looking at code. Nerdy? Hell yes!
+            <br />
+            <br />
+            I try to keep balance in my life. I like to feel sun rays on my face. I'm sick of over positive posts on LinkedIn. I hate medicine ads that promise problems will disappear when you take the drug instead of putting an effort in changing yourself. Sometimes I just don't want to do anything. Sometimes I'm bored and sometimes I like this state.
+            <br />
+            <br />
+            I live in Warsaw, Poland. Here I study Data Analysis Engineering at Warsaw University of Technology. 
+          </p>
         </Section>
         <Separator />
         <Section id="technologies" title="My Tech Stack">

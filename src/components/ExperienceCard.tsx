@@ -6,7 +6,7 @@ export default function ExperienceCard({ experience }: { experience: Experince }
     let counter = 1
     
     return (
-        <div className="w-4/5 h-90 mt-24 flex border shadow-[4px_4px] shadow-secondary">
+        <div className="w-4/5 h-90 mt-16 flex border shadow-[4px_4px] shadow-secondary">
             <div className="relative flex-4">
               <h3 className="pl-6 mt-3 mb-3 text-xl text-on-surface-light">
                 { experience.title }
