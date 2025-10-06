@@ -15,6 +15,7 @@ export default function Navbar() {
         const nodes = Array.from(document.querySelectorAll("section"))
         const ids = nodes.map(node => node.id)
         setSections(ids)
+        if (active == "") setActive(ids[0])
 
         const handleScroll = () => {
             const current = nodes.map(node => {

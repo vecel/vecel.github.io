@@ -9,6 +9,7 @@ import TechItem from "./components/TechItem"
 import Separator from "./components/Separator"
 import ExperienceCard from "./components/ExperienceCard"
 import ProjectCard from "./components/ProjectCard"
+import { experience } from "./data/experience"
 
 export default function App() {
 
@@ -48,14 +49,9 @@ export default function App() {
         <Separator />
         <Section id="experience" title="My Experience">
           <div className="flex flex-col items-center">
-            <ExperienceCard
-              title="Backend Developer"
-              description="to do"
-              years="2024"
-              achievements={["item 1", "item 2"]}
-              company="JetBrains"
-              technologies={["Java", "Spring Boot"]}
-            />
+            { experience.map((exp) => (
+              <ExperienceCard experience={exp} />
+            ))}
           </div>
         </Section>
         <Separator />
