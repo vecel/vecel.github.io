@@ -2,7 +2,7 @@ import Cursor from "./components/Cursor"
 import Navbar from "./components/Navbar"
 
 import { FaGitAlt, FaGithub, FaJava, FaLinkedinIn, FaPython, FaReact } from "react-icons/fa6"
-import { SiCss3, SiHtml5, SiJavascript, SiR, SiSpring, SiTailwindcss } from "react-icons/si"
+import { SiCplusplus, SiCss3, SiHibernate, SiHtml5, SiJavascript, SiR, SiSpring, SiTailwindcss } from "react-icons/si"
 import SocialItem from "./components/SocialItem"
 import Section from "./components/Section"
 import TechItem from "./components/TechItem"
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className="ml-32 mr-32 min-h-dvh flex flex-col items-center bg-surface text-on-surface font-mono">
+      <main className="ml-32 mr-32 min-h-dvh flex flex-col items-center bg-surface text-on-surface">
         <Separator className="h-24" />
         <section id="welcome" className="w-3/5 scroll-mt-24">
           <h3 className="text-primary text-sm">Hello, my name is</h3>
@@ -54,6 +54,7 @@ export default function App() {
             <TechItem title="Tailwind" icon={SiTailwindcss} />
             <TechItem title="Python" icon={FaPython} />
             <TechItem title="R" icon={SiR} />
+            <TechItem title="C++" icon={SiCplusplus} />
             <TechItem title="Git" icon={FaGitAlt} />
           </div>
         </Section>
