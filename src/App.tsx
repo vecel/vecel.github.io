@@ -10,8 +10,26 @@ import Separator from "./components/Separator"
 import ExperienceCard from "./components/ExperienceCard"
 import ProjectCard from "./components/ProjectCard"
 import { experience } from "./data/experience"
+import EmailForm from "./components/EmailForm"
+import PopupBanner from "./components/PopupBanner"
+import { useState } from "react"
 
 export default function App() {
+
+  const emptyPopup = {
+    message: "",
+    display: false
+  }
+
+  const [popup, setPopup] = useState(emptyPopup)
+
+  const displayPopup = (message: string) => {
+    setPopup({
+      message: message,
+      display: true
+    })
+    setTimeout(() => setPopup(emptyPopup), 4000)
+  }
 
   return (
     <>
@@ -43,7 +61,7 @@ export default function App() {
           </p>
         </Section>
         <Separator />
-        <Section id="technologies" title="My Tech Stack">
+        <Section id="tech" title="My Tech Stack">
           <div className="flex justify-around flex-wrap text-primary">
             <TechItem title="Java" icon={FaJava} />
             <TechItem title="Spring" icon={SiSpring} />
@@ -62,7 +80,8 @@ export default function App() {
         <Section id="experience" title="My Experience">
           <div className="flex flex-col items-center">
             { experience.map((exp) => (
-              <ExperienceCard experience={exp} />
+              // TODO: change key
+              <ExperienceCard key={exp.title} experience={exp} />
             ))}
           </div>
         </Section>
@@ -91,12 +110,7 @@ export default function App() {
               <span className="text-primary">mateusz.karandys@gmail.com</span>
             </p>
             <div className="w-4 h-full" />
-            <form className="flex flex-col items-stretch flex-4 text-sm">
-              <input id="email" type="email" placeholder="Email..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
-              <input type="text" placeholder="Subject..." required className="mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
-              <textarea placeholder="Content..." required className="flex-1 mb-4 p-2 border focus:shadow-[4px_4px] focus:shadow-secondary" />
-              <input type="submit" value="Send" className="p-2 pl-6 pr-6 self-center border bg-secondary-container text-primary cursor-pointer hover:shadow-[4px_4px] hover:shadow-secondary focus:shadow-[4px_4px] focus:shadow-secondary" />
-            </form>
+            <EmailForm displayPopup={displayPopup}/>
           </div>
         </Section>
         <Separator />
@@ -112,6 +126,7 @@ export default function App() {
         
       </footer>
       <Cursor />
+      <PopupBanner message={popup.message} display={popup.display}/>
     </>
   )
 }
