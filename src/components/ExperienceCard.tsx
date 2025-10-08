@@ -7,15 +7,15 @@ export default function ExperienceCard({ experience }: { experience: Experince }
     
     return (
         <div className="w-4/5 h-90 mt-16 flex border shadow-[4px_4px] shadow-secondary">
-            <div className="relative flex-4 overflow-scroll">
+            <div className="relative flex-4 flex flex-col">
               <h3 className="pl-6 mt-3 mb-3 text-xl text-on-surface-light">
                 { experience.title }
               </h3>
               <div className="w-32 h-0.5 bg-primary rounded-r-xs" />
-              <p className="p-2 text-sm text-on-surface-dark text-justify">
+              <p className="p-2 text-sm text-on-surface-dark text-justify overflow-scroll">
                 { experience.description }
               </p>
-              <div className="absolute bottom-0 left-0 w-full flex">
+              <div className="w-full flex mt-auto">
                 <div className="p-3 pl-5 pr-5 bg-on-surface text-2xl text-surface">
                     { experience.years }
                 </div>
